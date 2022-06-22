@@ -1,0 +1,88 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+<!-- ================================
+Start SEO blocks
+================================= -->
+{% block title %}{% endblock %}
+{% block decription %}{% endblock %}
+{% block keywords %}{% endblock %}
+<!-- ================================
+END SEO blocks
+================================= -->
+
+<!-- ================================
+Start CSS blocks
+================================= -->
+{% block extend_header %}{% endblock %}
+<!-- ================================
+END CSS blocks
+================================= -->
+
+<!-- ================================
+Start script blocks
+================================= -->
+{% block extend_footer %}{% endblock %}
+<!-- ================================
+END script blocks
+================================= -->
+
+<!-- ================================
+Start Content
+================================= -->
+{% block content %}
+
+
+<section class="contact" id="contact" style="background-image: url({% static 'images/3.jfif' %});">
+  <div class="max-width">
+      <h2 style="text-align: center; color:white">Contact me</h2>
+      <div class="contact-content">
+          <div class="column left">
+              <div class="text" style="color: white;">Get in Touch</div>
+              <p style="color: white;">Hello, <br> Did you need any of my services or wish to get in touch with me for any
+                 other reason?.<br><br>Phone: +2347016683231(call only)<br>
+                 Email: dareadebayo42@gmail.com<br>
+                 <a href="https://wa.me/message/WSSSIOW6BWSJI1" target="_blank" style="color: blueviolet;">
+                  Click Here to chat with me on whatsApp</a>
+                </p>
+              
+                  </div>
+                  </div>
+                  </div>
+                  
+                  
+          </div>
+          <div class="column right">
+              <div class="text" style="color: white;">Message me</div>
+              <form id="contactForm" method="POST" action="/contact/" >
+                {% csrf_token %}
+                  <div class="fields">
+                    
+                      <div class="field name">
+                        <label for="name" style="color: white;"></label>
+                        {{form.name}}
+                      </div>
+                      <div class="field email">
+                        <label for="name" style="color: white;"></label>
+                        {{form.email}}
+                      </div>
+                  </div>
+                  
+                  <div class="field textarea">
+                    <label for="name" style="color: white;">
+                    </label>
+                    {{form.message}}
+                  </div><br><br>
+                  <div class="button-area">
+                      <button type="submit">Send message</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- ================================
+End Content
+================================= -->
+{%endblock%}
+    
